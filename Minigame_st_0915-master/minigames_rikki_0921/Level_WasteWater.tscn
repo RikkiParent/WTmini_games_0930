@@ -1,0 +1,322 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://graphic_minigame/background.PNG" type="Texture" id=1]
+[ext_resource path="res://graphic_minigame/background_houses.PNG" type="Texture" id=2]
+[ext_resource path="res://graphic_minigame/background_treatmentplant.PNG" type="Texture" id=3]
+[ext_resource path="res://graphic_minigame/main_tree.PNG" type="Texture" id=4]
+[ext_resource path="res://graphic_minigame/recycledwater_golf.PNG" type="Texture" id=5]
+[ext_resource path="res://graphic_minigame/UI_Square.png" type="Texture" id=6]
+[ext_resource path="res://scripts/Level_WasteWater.gd" type="Script" id=7]
+[ext_resource path="res://graphic_minigame/background_houses_shade.png" type="Texture" id=8]
+[ext_resource path="res://graphic_minigame/recycledwater_pipe_1.PNG" type="Texture" id=9]
+[ext_resource path="res://graphic_minigame/recycledwater_pipe_3.PNG" type="Texture" id=10]
+[ext_resource path="res://graphic_minigame/recycledwater_pipe_2.PNG" type="Texture" id=11]
+[ext_resource path="res://scripts/PipeTurner.gd" type="Script" id=12]
+[ext_resource path="res://YouWin.tscn" type="PackedScene" id=13]
+[ext_resource path="res://YouLose.tscn" type="PackedScene" id=14]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 475.067, 597.507 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 472.015, 641.232 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 595.574, 637.439 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 625.733, 715.271 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 544.641, 671.196 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 639.247, 604.598 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 529.5, 553.052 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 578.375, 681.324 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 556.163, 514.367 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 695.296, 737.365 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 636.258, 423.445 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 555.729, 564.415 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 628.652, 607.559 )
+
+[sub_resource type="Gradient" id=14]
+offsets = PoolRealArray( 0, 0.556291, 1 )
+colors = PoolColorArray( 0, 0.493408, 0.734375, 1, 0.328125, 1, 1, 1, 1, 1, 1, 1 )
+
+[node name="Level_WasteWater" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 1004.87, 536.193 )
+scale = Vector2( 1, 0.707419 )
+texture = ExtResource( 1 )
+
+[node name="forest" type="Node2D" parent="."]
+position = Vector2( 254.314, 188.274 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="main_tree" type="Sprite" parent="forest"]
+position = Vector2( -392.623, 31.0966 )
+texture = ExtResource( 4 )
+
+[node name="main_tree8" type="Sprite" parent="forest"]
+position = Vector2( -953.855, 23.8496 )
+texture = ExtResource( 4 )
+
+[node name="main_tree2" type="Sprite" parent="forest"]
+position = Vector2( 172.138, 90.6853 )
+texture = ExtResource( 4 )
+
+[node name="main_tree3" type="Sprite" parent="forest"]
+position = Vector2( -306.53, 872.555 )
+texture = ExtResource( 4 )
+
+[node name="main_tree4" type="Sprite" parent="forest"]
+position = Vector2( 1104, 129.891 )
+texture = ExtResource( 4 )
+
+[node name="main_tree5" type="Sprite" parent="forest"]
+position = Vector2( 734.424, 1083.13 )
+texture = ExtResource( 4 )
+
+[node name="main_tree6" type="Sprite" parent="forest"]
+position = Vector2( 1697.63, 723.381 )
+texture = ExtResource( 4 )
+
+[node name="main_tree7" type="Sprite" parent="forest"]
+position = Vector2( -1347.1, 689.525 )
+texture = ExtResource( 4 )
+
+[node name="soccerField" type="Node2D" parent="."]
+
+[node name="recycledwater_golf" type="Sprite" parent="soccerField"]
+position = Vector2( 1105.23, 287.289 )
+scale = Vector2( -0.3, 0.3 )
+texture = ExtResource( 5 )
+
+[node name="Pipes" type="Node2D" parent="."]
+position = Vector2( 1064.18, 1020.29 )
+scale = Vector2( 0.15, 0.15 )
+script = ExtResource( 12 )
+
+[node name="pipe_1" type="Sprite" parent="Pipes"]
+position = Vector2( 342.642, -753.893 )
+scale = Vector2( 1.2, 1 )
+texture = ExtResource( 9 )
+
+[node name="Area_1" type="Area2D" parent="Pipes/pipe_1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipes/pipe_1/Area_1"]
+shape = SubResource( 1 )
+
+[node name="pipe_2" type="Sprite" parent="Pipes"]
+position = Vector2( 1843.64, -738.941 )
+texture = ExtResource( 9 )
+
+[node name="Area_2" type="Area2D" parent="Pipes/pipe_2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipes/pipe_2/Area_2"]
+shape = SubResource( 2 )
+
+[node name="pipe_3" type="Sprite" parent="Pipes"]
+position = Vector2( 3203.2, -699.162 )
+texture = ExtResource( 10 )
+
+[node name="Area_3" type="Area2D" parent="Pipes/pipe_3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipes/pipe_3/Area_3"]
+position = Vector2( 85.7373, -182.907 )
+shape = SubResource( 3 )
+
+[node name="pipe_4" type="Sprite" parent="Pipes"]
+position = Vector2( 3194.75, -2457.53 )
+texture = ExtResource( 11 )
+
+[node name="Area_4" type="Area2D" parent="Pipes/pipe_4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipes/pipe_4/Area_4"]
+position = Vector2( 249.931, -19.6021 )
+shape = SubResource( 4 )
+
+[node name="pipe_5" type="Sprite" parent="Pipes"]
+position = Vector2( 1611.94, -2701.93 )
+rotation = 1.57079
+texture = ExtResource( 10 )
+
+[node name="Area_5" type="Area2D" parent="Pipes/pipe_5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipes/pipe_5/Area_5"]
+position = Vector2( 315.126, -205.88 )
+shape = SubResource( 5 )
+
+[node name="pipe_6" type="Sprite" parent="Pipes"]
+position = Vector2( 1581.28, -3566.65 )
+rotation = -1.57081
+texture = ExtResource( 10 )
+
+[node name="Area_6" type="Area2D" parent="Pipes/pipe_6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipes/pipe_6/Area_6"]
+position = Vector2( 168.468, -96.2646 )
+shape = SubResource( 6 )
+
+[node name="pipe_7" type="Sprite" parent="Pipes"]
+position = Vector2( 42.1489, -3866.33 )
+texture = ExtResource( 9 )
+
+[node name="Area_7" type="Area2D" parent="Pipes/pipe_7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipes/pipe_7/Area_7"]
+shape = SubResource( 7 )
+
+[node name="pipe_8" type="Sprite" parent="Pipes"]
+position = Vector2( -2900.62, -4097.8 )
+texture = ExtResource( 9 )
+
+[node name="Area_8" type="Area2D" parent="Pipes/pipe_8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipes/pipe_8/Area_8"]
+shape = SubResource( 8 )
+
+[node name="pipe_9" type="Sprite" parent="Pipes"]
+position = Vector2( -4265.77, -4174.18 )
+texture = ExtResource( 9 )
+
+[node name="Area_9" type="Area2D" parent="Pipes/pipe_9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipes/pipe_9/Area_9"]
+shape = SubResource( 9 )
+
+[node name="pipe_soccer" type="Sprite" parent="Pipes"]
+position = Vector2( -1490.44, -4162.9 )
+rotation = 1.5708
+scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 11 )
+
+[node name="Area_soccer" type="Area2D" parent="Pipes/pipe_soccer"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipes/pipe_soccer/Area_soccer"]
+shape = SubResource( 10 )
+
+[node name="pipe_ocean" type="Sprite" parent="Pipes"]
+position = Vector2( 3529.45, -4046.66 )
+rotation = 1.5708
+texture = ExtResource( 9 )
+
+[node name="Area_ocean" type="Area2D" parent="Pipes/pipe_ocean"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipes/pipe_ocean/Area_ocean"]
+shape = SubResource( 11 )
+
+[node name="pipe_forest" type="Sprite" parent="Pipes"]
+position = Vector2( -5762.69, -4462.61 )
+rotation = 1.5708
+scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 10 )
+
+[node name="Area_forest" type="Area2D" parent="Pipes/pipe_forest"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipes/pipe_forest/Area_forest"]
+position = Vector2( 44.6128, -133.84 )
+shape = SubResource( 12 )
+
+[node name="foreground" type="Node2D" parent="."]
+
+[node name="background_houses" type="Sprite" parent="foreground"]
+light_mask = 2
+position = Vector2( 309.435, 683.637 )
+scale = Vector2( 0.388136, 0.349732 )
+texture = ExtResource( 2 )
+
+[node name="Area_House" type="Area2D" parent="foreground/background_houses"]
+
+[node name="House" type="CollisionShape2D" parent="foreground/background_houses/Area_House"]
+shape = SubResource( 13 )
+
+[node name="Light2D" type="Light2D" parent="foreground/background_houses"]
+visible = false
+texture = ExtResource( 8 )
+texture_scale = 2.9
+
+[node name="background_treatmentplant" type="Sprite" parent="foreground"]
+position = Vector2( 791.919, 764.088 )
+scale = Vector2( 0.333283, 0.31886 )
+texture = ExtResource( 3 )
+
+[node name="WaterProgress" type="TextureProgress" parent="foreground/background_treatmentplant"]
+margin_left = -585.0
+margin_top = 718.0
+margin_right = 3602.0
+margin_bottom = 928.0
+max_value = 200.0
+texture_under = ExtResource( 6 )
+texture_progress = ExtResource( 6 )
+tint_under = Color( 0.286275, 0.286275, 0.286275, 1 )
+tint_progress = Color( 0.152941, 0.964706, 0.984314, 1 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="foreground/background_treatmentplant/WaterProgress"]
+
+[node name="Particles" type="Node2D" parent="."]
+visible = false
+
+[node name="Particles_ocean" type="CPUParticles2D" parent="Particles"]
+position = Vector2( 1596.53, 283.066 )
+scale = Vector2( 15, 15 )
+amount = 17
+direction = Vector2( 0, -2 )
+initial_velocity = 53.76
+initial_velocity_random = 0.65
+color_ramp = SubResource( 14 )
+
+[node name="Particles_soccer" type="CPUParticles2D" parent="Particles"]
+position = Vector2( 829.914, 281.396 )
+scale = Vector2( 15, 15 )
+amount = 17
+direction = Vector2( 0, -2 )
+initial_velocity = 43.01
+
+[node name="Particles_forest" type="CPUParticles2D" parent="Particles"]
+position = Vector2( 203.595, 246.322 )
+scale = Vector2( 15, 15 )
+amount = 17
+direction = Vector2( 0, -2 )
+initial_velocity = 40.0
+
+[node name="YouWin" parent="." instance=ExtResource( 13 )]
+visible = false
+
+[node name="YouLose" parent="." instance=ExtResource( 14 )]
+visible = false
+[connection signal="input_event" from="Pipes/pipe_1/Area_1" to="Pipes" method="_on_Area_1_input_event"]
+[connection signal="input_event" from="Pipes/pipe_2/Area_2" to="Pipes" method="_on_Area_2_input_event"]
+[connection signal="input_event" from="Pipes/pipe_3/Area_3" to="Pipes" method="_on_Area_3_input_event"]
+[connection signal="input_event" from="Pipes/pipe_4/Area_4" to="Pipes" method="_on_Area_4_input_event"]
+[connection signal="input_event" from="Pipes/pipe_5/Area_5" to="Pipes" method="_on_Area_5_input_event"]
+[connection signal="input_event" from="Pipes/pipe_6/Area_6" to="Pipes" method="_on_Area_6_input_event"]
+[connection signal="input_event" from="Pipes/pipe_7/Area_7" to="Pipes" method="_on_Area_7_input_event"]
+[connection signal="input_event" from="Pipes/pipe_8/Area_8" to="Pipes" method="_on_Area_8_input_event"]
+[connection signal="input_event" from="Pipes/pipe_9/Area_9" to="Pipes" method="_on_Area_9_input_event"]
+[connection signal="input_event" from="Pipes/pipe_soccer/Area_soccer" to="Pipes" method="_on_Area_soccer_input_event"]
+[connection signal="input_event" from="Pipes/pipe_ocean/Area_ocean" to="Pipes" method="_on_Area_ocean_input_event"]
+[connection signal="input_event" from="Pipes/pipe_forest/Area_forest" to="Pipes" method="_on_Area_forest_input_event"]
+[connection signal="input_event" from="foreground/background_houses/Area_House" to="." method="_on_Area_House_input_event"]
+[connection signal="mouse_exited" from="foreground/background_houses/Area_House" to="." method="_on_Area_House_mouse_exited"]

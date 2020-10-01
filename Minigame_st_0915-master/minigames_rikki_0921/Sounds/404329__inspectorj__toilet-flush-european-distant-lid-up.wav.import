@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/404329__inspectorj__toilet-flush-european-distant-lid-up.wav-ff91da0714b4e672ae45ee658dba9bf4.sample"
+
+[deps]
+
+source_file="res://Sounds/404329__inspectorj__toilet-flush-european-distant-lid-up.wav"
+dest_files=[ "res://.import/404329__inspectorj__toilet-flush-european-distant-lid-up.wav-ff91da0714b4e672ae45ee658dba9bf4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
